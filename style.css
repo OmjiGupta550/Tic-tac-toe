@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+body{
+    background-color: rgb(88, 241, 190);
+    overflow: hidden;
+}
+.cells{
+    width: 30vw;
+    height: 63vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    
+    margin: auto;
+    margin-top: 1vh;   
+}
+.cells button{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 0.5vh;
+    font-size: 100px;
+    border: 10px solid black;
+    transition: all 0.1s ease;
+}
+.cells button:active {
+    animation: clickAnimation 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#reset{
+    height:10vmin;
+    width: 20vmin;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 4vh;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+#reset:active {
+    animation: clickAnimation 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.highlight{
+    color: red;
+}
+.gameOver {
+    width: 20vw;
+    height: 10vh;
+    background-color: black;
+    visibility: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 5vmin;
+    margin-top: 2vh;
+    border-radius: 10px;
+}
+.play_again{
+    visibility: hidden;
+    color: white;
+    position: relative;
+    height: 20vh;
+    width: 30vw;
+    background-color: black;
+    border-radius: 20px;
+    margin: auto;
+    bottom: 12vh;
+} 
+h5{
+    position: relative;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;  
+}
+.play_again button{
+    height: 8vmin;
+    width: 15vmin;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 4vh;
+    border: none;
+    color: white;
+    background-color: rgb(241, 88, 88);
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+.play_again button:active {
+    animation: clickAnimation 0.3s ease;
+    background-color: rgb(220, 70, 70);
+}
+.play_again p{
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    top: 15px;
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .cells {
+        width: 90vw;
+        height: 50vh;
+    }
+    
+    .cells button {
+        width: 100px;
+        height: 100px;
+        font-size: 70px;
+        border: 8px solid black;
+    }
+    
+    #reset {
+        height: 8vmin;
+        width: 18vmin;
+        font-size: 1.2rem;
+        padding: 30px;
+    }
+    
+    .gameOver {
+        width: 70vw;
+        font-size: 4vmin;
+    }
+    
+    .play_again {
+        width: 80vw;
+        height: 18vh;
+    }
+    
+    h5 {
+        font-size: 20px;
+    }
+    
+    .play_again button {
+        height: 7vmin;
+        width: 12vmin;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .cells {
+        width: 95vw;
+        height: 45vh;
+        margin-top: 2vh;
+    }
+    
+    .cells button {
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        border: 6px solid black;
+        margin-top: 0.3vh;
+    }
+    
+    #reset {
+        height: 7vmin;
+        width: 16vmin;
+        font-size: 1rem;
+        margin-top: 3vh;
+        padding: 20px;
+    }
+    
+    .gameOver {
+        width: 85vw;
+        height: 8vh;
+        font-size: 3.5vmin;
+        margin-top: 1vh;
+    }
+    
+    .play_again {
+        width: 90vw;
+        height: 16vh;
+        bottom: 8vh;
+    }
+    
+    h5 {
+        font-size: 18px;
+        top: 2px;
+    }
+    
+    .play_again button {
+        height: 6vmin;
+        width: 10vmin;
+        font-size: 0.9rem;
+        margin-top: 3vh;
+    }
+    
+    .play_again p {
+        font-size: 12px;
+        top: 10px;
+    }
+}
