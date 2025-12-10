@@ -3,7 +3,7 @@ let resetbutton = document.querySelector("#reset");
 let gameOver = document.querySelector(".gameOver");
 let play_again = document.querySelector(".play_again");
 let playagainbutton = document.querySelector("#play_again_btn");
-let playagainpara = document.querySelector(".playagainpara");
+let playagainpara = document.querySelector(".play_again p");
 
 
 let button_state = "X";
@@ -60,6 +60,8 @@ const check_win = () => {
             else if (i === 9){
                 console.log("Match Draw");
                 gameOver.style.visibility = "visible";
+                playagainpara.innerText = "Match Draw!";
+                play_again.style.visibility = "visible";
                 i = 0;
                 return;
             }
@@ -78,18 +80,20 @@ resetbutton.addEventListener("click",() => {
         button.innerText = "";
         button.disabled = false;
         button.classList.remove("highlight");
-        button_state = "X";
-        gameOver.style.visibility = "hidden";
-
     });
+    button_state = "X";
+    i = 0;
+    gameOver.style.visibility = "hidden";
+    play_again.style.visibility = "hidden";
 });
 playagainbutton.addEventListener("click",()=> {
     btn.forEach(button => {
         button.innerText = "";
-        button_state = "X";
         button.disabled = false;
         button.classList.remove("highlight");
-        gameOver.style.visibility = "hidden";
     });
+    button_state = "X";
+    i = 0;
+    gameOver.style.visibility = "hidden";
     play_again.style.visibility = "hidden";
 });
